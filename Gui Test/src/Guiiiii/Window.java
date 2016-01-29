@@ -28,7 +28,7 @@ public class Window {
 	static Button button = new Button("Press to Close ;) .");
 	static Icon icon;
 	static JLabel label2;
-	static URL hauntedURL;
+	static URL url,hauntedURL;
 	static Boolean spooky = true;
 	static Boolean reopen = false;
 	static Clip clip, clip2;
@@ -37,7 +37,7 @@ public class Window {
 
 	public static void main(String[] args) throws MalformedURLException { //Accommodates URL errors.
 		hauntedURL = new URL("https://media.giphy.com/media/1dPTVv6FaQmZ2/giphy.gif"); //???
-		URL url = new URL(
+		url = new URL(
 				"http://2.bp.blogspot.com/-baqmxAt8YHg/UMRuNx6uNdI/AAAAAAAAD1s/TzmvfnYyP8E/s1600/rick-astely.gif"); //Ricky
 		icon = new ImageIcon(url);
 		label2 = new JLabel(icon);
