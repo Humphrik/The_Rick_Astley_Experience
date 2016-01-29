@@ -42,8 +42,8 @@ public class Window {
 		icon = new ImageIcon(url);
 		label2 = new JLabel(icon);
 		//Image created.
-		play("src\\Guiiiii\\Ricky.wav", true); //Creates and plays main music.
-		playOther("src\\Guiiiii\\xfiles.wav", false); //???
+		play("src\\Guiiiii\\Ricky.wav"); //Creates and plays main music.
+		playOther("src\\Guiiiii\\xfiles.wav"); //???
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); //Makes sure the window does not terminate early.
 		frame.setSize(1280, 800);
 		frame.setResizable(false);
@@ -73,27 +73,22 @@ public class Window {
 
 	}
 
-	public static void play(String filename, Boolean startup) { //Creates music for clip.
+	public static void play(String filename) { //Creates music for clip.
 		try {
 			clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(new File(filename)));
 			clip.loop(Clip.LOOP_CONTINUOUSLY);
-			if (!startup) {
-				clip.stop();
-			}
 		} catch (Exception exc) {
 			exc.printStackTrace(System.out);
 		}
 	}
 
-	public static void playOther(String filename, Boolean startup) { //Creates music for clip 2.
+	public static void playOther(String filename) { //Creates music for clip 2.
 		try {
 			clip2 = AudioSystem.getClip();
 			clip2.open(AudioSystem.getAudioInputStream(new File(filename)));
 			clip2.start();
-			if (!startup) {
-				clip2.stop(); //Stops.
-			}
+			clip2.stop();
 		} catch (Exception exc) {
 			exc.printStackTrace(System.out);
 		}
