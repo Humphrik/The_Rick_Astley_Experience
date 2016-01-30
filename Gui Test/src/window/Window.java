@@ -172,17 +172,17 @@ class Listener implements ActionListener { // For when the button is pressed.
 		clickCount++; // Adds to click count.
 		if (clickCount == 50) {
 			Window.label.setText("You suck."); // Easter egg.
-		} else if (clickCount == 75) {
+		} else if (clickCount == 90) {
 			Window.label.setText("Give up."); // Easter egg.
-		} else if (clickCount >= 100 && clickCount <= 108) {
+		} else if (clickCount >= 120 && clickCount <= 128) {
 			Window.label.setText("N3VER GONN4 G1VE Y0U UP!1!!11!");
-		} else if (clickCount > 108 && clickCount <= 116) {
+		} else if (clickCount > 128 && clickCount <= 136) {
 			Window.label.setText("N#V_R G0NN4 L33t y0# d_WN!1!1!");
-		} else if (clickCount > 116 && clickCount <= 124) {
+		} else if (clickCount > 136 && clickCount <= 144) {
 			Window.label.setText("N___R GOn54 RN aR##Nd");
-		} else if (clickCount > 124 && clickCount <= 132) {
+		} else if (clickCount > 144 && clickCount <= 152) {
 			Window.label.setText("AND D3S3RT YYYYYYY UUI YP UI YIUY JKSDH");
-		} else if (clickCount > 132) { // You've gone too far...
+		} else if (clickCount > 152) { // You've gone too far...
 			Window.label2.setIcon(hauntedIcon);
 			Window.spooky = false;
 		} else {
