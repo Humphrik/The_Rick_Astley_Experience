@@ -140,7 +140,7 @@ public class Window {
 
 	public static void reopen() { // "Reopens" after a delay.
 		try {
-			Thread.sleep(6000);
+			Thread.sleep(3000);
 			clip.start();
 			// clip2.stop();
 			frame.setVisible(true);
