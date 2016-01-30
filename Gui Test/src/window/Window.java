@@ -43,8 +43,8 @@ public class Window {
 		icon = new ImageIcon(url);
 		label2 = new JLabel(icon);
 		//Image created.
-		play("./audio/Ricky.wav"); //Creates and plays main music.
-		playOther("./audio/xfiles.wav"); //???
+		play("src/audio/Ricky.wav"); //Creates and plays main music.
+		playOther("src/audio/xfiles.wav"); //???
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); //Makes sure the window does not terminate early.
 		frame.setSize(1280, 800);
 		frame.setResizable(false);
