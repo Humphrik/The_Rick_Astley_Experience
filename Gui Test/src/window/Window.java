@@ -75,7 +75,9 @@ public class Window {
 			System.out.print("");
 			if (reopen) {
 				reopen(time); // Reopens a 'closed' window.
+				if(time<15000){
 				time+=3000;
+				}
 				reopen = false;
 			}
 		}
