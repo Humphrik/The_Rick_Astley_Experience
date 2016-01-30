@@ -30,11 +30,13 @@ public class Window {
 	static Boolean spooky = true;
 	static Boolean reopen = false;
 	static Clip clip, clip2;
+	public static boolean debugging = false; // MAY be set to true at start of main();
 
 	// static WindowListener exitListener;
 	//static MalformedURLException error = new MalformedURLException("");
 
 	public static void main(String[] args) throws MalformedURLException { //Accommodates URL errors.
+		checkParameters(args);
 
 		hauntedURL = new URL("https://media.giphy.com/media/1dPTVv6FaQmZ2/giphy.gif"); //???
 		url = new URL(
@@ -72,7 +74,33 @@ public class Window {
 		spooked(); //???
 
 	}
-
+	
+	// Meant to be called by main
+	// Checks if there are any parameters and sends them to the
+	// checkAllowedParameters method to actually check if the given
+	// Parameters are accepted.
+	static void checkParameters(String[] args) {
+		System.out.println("What");
+		if(args.length == 0) {
+			return;
+		} else {
+			for (int i = 0; i < args.length; i++) {
+				// Checks all of the parameters entered against the
+				// list of accepted parameters.
+				checkAllowedParameters(args[i]);
+			}
+		}
+	}
+	
+	// Meant to be called by checkParameters function
+	// Checks the given parameter against the list of accepted parameters
+	static void checkAllowedParameters(String arg) {
+		if(arg.equals("debug")) {
+			System.out.println("Debugging enabled");
+			debugging = true;
+		}
+	}
+	
 	public static void play(String filename) { //Creates music for clip.
 		try {
 			clip = AudioSystem.getClip();
@@ -151,7 +179,7 @@ class Listener implements ActionListener { //For when the button is pressed.
 		} else {
 			Window.label.setText("" + clickCount); //Displays the number of clicks (usually.)
 		}
-		System.out.println(click);
+		if (Window.debugging) System.out.println(click);
 		if (click >= 0.99) { //When you are lucky enough....
 			Window.label.setText("You may Leave.");
 			Window.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Window will no longer "reopen."
