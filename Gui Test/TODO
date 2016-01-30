@@ -1,7 +1,9 @@
 			TODO LIST
 
 
-1.		Fix the audio problem (program can't find the files)
+1.		Fix the audio problem (invalid format)
+			It is possible that it is just my testing environment at home that
+			is causing the problems.
 Status:	IN PROGRESS (Alejandro Ramos)
 
 2.	Separate the code into multiple files (one class per file).
