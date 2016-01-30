@@ -1,3 +1,5 @@
+package window;
+
 import java.awt.Button;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
