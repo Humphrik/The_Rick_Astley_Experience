@@ -42,8 +42,8 @@ public class Window {
 		icon = new ImageIcon(url);
 		label2 = new JLabel(icon);
 		//Image created.
-		play("src\\Guiiiii\\Ricky.wav"); //Creates and plays main music.
-		playOther("src\\Guiiiii\\xfiles.wav"); //???
+		play("audio\\Ricky.wav"); //Creates and plays main music.
+		playOther("audio\\xfiles.wav"); //???
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); //Makes sure the window does not terminate early.
 		frame.setSize(1280, 800);
 		frame.setResizable(false);
@@ -140,7 +140,7 @@ class Listener implements ActionListener { //For when the button is pressed.
 		} else if (clickCount >= 100 && clickCount <= 108) {
 			Window.label.setText("N3VER GONN4 G1VE Y0U UP!1!!11!");
 		} else if (clickCount > 108 && clickCount <= 116) {
-			Window.label.setText("N#V_R G0NN4 L33t y0# d_WN¡!!¡!);");
+			Window.label.setText("N#V_R G0NN4 L33t y0# d_WNï¿½!!ï¿½!);");
 		} else if (clickCount > 116 && clickCount <= 124) {
 			Window.label.setText("N___R GOn54 RN aR##Nd");
 		} else if (clickCount > 124 && clickCount <= 132) {
