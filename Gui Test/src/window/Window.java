@@ -90,7 +90,6 @@ public class Window {
 	// checkAllowedParameters method to actually check if the given
 	// Parameters are accepted.
 	static void checkParameters(String[] args) {
-		System.out.println("What");
 		if (args.length == 0) {
 			return;
 		} else {
