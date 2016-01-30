@@ -1,5 +1,3 @@
-package Guiiiii;
-
 import java.awt.Button;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
@@ -32,10 +30,12 @@ public class Window {
 	static Boolean spooky = true;
 	static Boolean reopen = false;
 	static Clip clip, clip2;
+
 	// static WindowListener exitListener;
 	//static MalformedURLException error = new MalformedURLException("");
 
 	public static void main(String[] args) throws MalformedURLException { //Accommodates URL errors.
+
 		hauntedURL = new URL("https://media.giphy.com/media/1dPTVv6FaQmZ2/giphy.gif"); //???
 		url = new URL(
 				"http://2.bp.blogspot.com/-baqmxAt8YHg/UMRuNx6uNdI/AAAAAAAAD1s/TzmvfnYyP8E/s1600/rick-astely.gif"); //Ricky
@@ -125,7 +125,7 @@ public class Window {
 	}
 }
 
-class Listener implements ActionListener { //For when the button is pressed. 
+class Listener implements ActionListener { //For when the button is pressed.
 	private double click;
 	private int clickCount = 0;
 	private static Icon hauntedIcon = new ImageIcon(Window.hauntedURL); //ooooOOOOhhh.
@@ -140,7 +140,10 @@ class Listener implements ActionListener { //For when the button is pressed.
 		} else if (clickCount >= 100 && clickCount <= 108) {
 			Window.label.setText("N3VER GONN4 G1VE Y0U UP!1!!11!");
 		} else if (clickCount > 108 && clickCount <= 116) {
-			Window.label.setText("N#V_R G0NN4 L33t y0# d_WN�!!�!);");
+			Window.label.setText("N#V_R G0NN4 L33t y0# d_WN\u+00A1!!\u+00A1!");
+			// the \u+00A1 is an upside down exclamation mark
+			// for compatibility with non-unicode code readers
+
 		} else if (clickCount > 116 && clickCount <= 124) {
 			Window.label.setText("N___R GOn54 RN aR##Nd");
 		} else if (clickCount > 124 && clickCount <= 132) {
