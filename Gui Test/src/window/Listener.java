@@ -16,7 +16,7 @@ class Listener implements ActionListener { // For when the button is pressed.
 		click = Math.random();
 		clickCount++; // Adds to click count.
 		oneMinusClick = 1 - click;
-		Window.closenessNumLabel.setText(" " + oneMinusClick);
+		Window.closenessNumLabel.setText(" " + Window.df.format(oneMinusClick));
 		
 		//Prints the text all the way to the right
 		if (0 < oneMinusClick && oneMinusClick < 0.1){

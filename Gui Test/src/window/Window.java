@@ -7,8 +7,10 @@ import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.math.RoundingMode;
 import java.net.MalformedURLException;
 import java.net.URL;
+import  java.text.DecimalFormat;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -35,6 +37,7 @@ public class Window {
 	public static boolean debugging = false; // MAY be set to true at start of main();
 	public static int konami = 0;
 	static int time = 1000;
+	static DecimalFormat df = new DecimalFormat("#.###");
 	// static WindowListener exitListener;
 	// static MalformedURLException error = new MalformedURLException("");
 
@@ -43,6 +46,7 @@ public class Window {
 																			// errors.
 		checkParameters(args);
 
+		df.setRoundingMode(RoundingMode.DOWN);
 		hauntedURL = new URL("https://media.giphy.com/media/1dPTVv6FaQmZ2/giphy.gif"); // ??? (spooky gif)
 		url = new URL(
 				"http://2.bp.blogspot.com/-baqmxAt8YHg/UMRuNx6uNdI/AAAAAAAAD1s/TzmvfnYyP8E/s1600/rick-astely.gif"); // Ricky
