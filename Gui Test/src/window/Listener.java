@@ -10,11 +10,36 @@ import javax.swing.JFrame;
 class Listener implements ActionListener { // For when the button is pressed.
 	private double click;
 	private int clickCount = 0;
-	private static Icon hauntedIcon = new ImageIcon(Window.hauntedURL); // ooooOOOOhhh.
+	double oneMinusClick;
+	private static Icon hauntedIcon = new ImageIcon(Window.hauntedURL); // ooooOOOOhhhsdfsdfaw4etsdf
 
 	public void actionPerformed(ActionEvent e) {
 		click = Math.random();
 		clickCount++; // Adds to click count.
+		oneMinusClick = 1 - click;
+		Window.closenessNumLabel.setText(" " + oneMinusClick);
+		if (0 < oneMinusClick && oneMinusClick < 0.1){
+			Window.closenessTextLabel.setText("SO CLOSE");
+		} else if (0.1 < oneMinusClick && oneMinusClick < 0.2){
+			Window.closenessTextLabel.setText("VERY CLOSE");
+		} else if (0.2 < oneMinusClick && oneMinusClick < 0.3){
+			Window.closenessTextLabel.setText("Pretty close");
+		} else if (0.3 < oneMinusClick && oneMinusClick < 0.4){
+			Window.closenessTextLabel.setText("Kinda close");
+		} else if (0.4 < oneMinusClick && oneMinusClick < 0.5){
+			Window.closenessTextLabel.setText("Half n half");
+		} else if (0.5 < oneMinusClick && oneMinusClick < 0.6){
+			Window.closenessTextLabel.setText("Not so close");
+		} else if (0.6 < oneMinusClick && oneMinusClick < 0.7){
+			Window.closenessTextLabel.setText("Get good");
+		} else if (0.7 < oneMinusClick && oneMinusClick < 0.8){
+			Window.closenessTextLabel.setText("UR BAD");
+		} else if (0.8 < oneMinusClick && oneMinusClick < 0.9){
+			Window.closenessTextLabel.setText("HOW ARE U THIS BAD");
+		} else if (0.9 < oneMinusClick && oneMinusClick < 1){
+			Window.closenessTextLabel.setText("LITERALLY THE WORST");
+		}
+			
 		if (clickCount == 50) {
 			Window.label.setText("You suck."); // Easter egg.
 		} else if (clickCount == 90) {

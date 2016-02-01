@@ -23,6 +23,9 @@ public class Window {
 	static Button button = new Button("Press to Close ;) .");
 	static Icon icon;
 	static JLabel label2;
+	static Label closenessLabel = new Label("How close was that click?");
+	static JLabel closenessNumLabel = new JLabel();
+	static Label closenessTextLabel = new Label();
 	static URL url, hauntedURL;
 	static Boolean spooky = true;
 	static Boolean reopen = false;
@@ -57,6 +60,12 @@ public class Window {
 		panel.add(label);
 		panel.add(button);
 		panel.add(label2);
+		panel.add(closenessLabel);
+		panel.add(closenessNumLabel);
+		panel.add(closenessTextLabel);
+		closenessTextLabel.setBounds(30, 10, 18, 23);
+		closenessLabel.setBounds(25, 5, 18, 23);
+		closenessNumLabel.setBounds(25,  10, 18, 23);
 		frame.add(panel); // Everything put together.
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent evt) { // Upon attempting to
@@ -79,7 +88,7 @@ public class Window {
 				reopen = false;
 			}
 		}
-		spooked(); // ???
+		spooked(); // U boutta get spooked boiiii
 
 	}
 
