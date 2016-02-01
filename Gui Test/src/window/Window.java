@@ -2,6 +2,8 @@ package window;
 
 import java.awt.Button;
 import java.awt.Label;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -30,8 +32,8 @@ public class Window {
 	static Boolean spooky = true;
 	static Boolean reopen = false;
 	static Clip clip, clip2;
-	public static boolean debugging = false; // MAY be set to true at start of
-												// main();
+	public static boolean debugging = false; // MAY be set to true at start of main();
+	public static int konami = 0;
 	static int time = 1000;
 	// static WindowListener exitListener;
 	// static MalformedURLException error = new MalformedURLException("");
@@ -53,7 +55,7 @@ public class Window {
 																// window does
 																// not terminate
 																// early.
-		frame.setSize(1280, 800);
+		frame.setSize(1280, 800); 
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		button.addActionListener(new Listener()); // Adds function to button.
@@ -65,7 +67,65 @@ public class Window {
 		panel.add(closenessTextLabel);//the text next to it
 		closenessTextLabel.setBounds(30, 10, 18, 23);//positions
 		closenessLabel.setBounds(25, 5, 18, 23);
-		closenessNumLabel.setBounds(25,  10, 18, 23);
+		closenessNumLabel.setBounds(25, 10, 18, 23);
+		panel.setFocusable(true);
+		panel.requestFocusInWindow();
+		panel.addKeyListener(new KeyListener(){
+			
+			//Konami code exit
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				if (e.getKeyCode()==38 && konami == 0){
+					konami = 1;
+				}
+				if (e.getKeyCode()==38 && konami == 1){
+					konami = 2;
+				}
+				if (e.getKeyCode()==40 && konami == 2){
+					konami = 3;
+				}
+				if (e.getKeyCode()==40 && konami == 3){
+					konami = 4;
+				}
+				if (e.getKeyCode()==37 && konami == 4){
+					konami = 5;
+				}
+				if (e.getKeyCode()==39 && konami == 5){
+					konami = 6;
+				}
+				if (e.getKeyCode()==37 && konami == 6){
+					konami = 7;
+				}
+				if (e.getKeyCode()==39 && konami == 7){
+					konami = 8;
+				}
+				if (e.getKeyChar()=='b' && konami == 8){
+					konami = 9;
+				}
+				if (e.getKeyChar()=='a' && konami == 9){
+					konami = 10;
+				}
+				if (konami == 10){
+					youCanLeave();
+				}
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+				
+				
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+			
+		});
 		frame.add(panel); // Everything put together.
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent evt) { // Upon attempting to
@@ -78,6 +138,7 @@ public class Window {
 			}
 		});
 		frame.setVisible(true); // Displays window.
+
 		
 		//When its playing keep playing, but when it's closed, call reopen(time);
 		while (spooky) { // While running functionally.
@@ -168,6 +229,10 @@ public class Window {
 		System.out.println("I want to believe.");
 		frame.dispose();
 	}
-
+	public static void youCanLeave(){
+		Window.label.setText("You may Leave.");
+		Window.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Window will no longer "reopen."
+		Window.button.setEnabled(false); // Turns off button.
+	}
 }
 

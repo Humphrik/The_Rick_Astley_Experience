@@ -67,15 +67,8 @@ class Listener implements ActionListener { // For when the button is pressed.
 		if (Window.debugging)
 			System.out.println(click);
 		if (click >= 0.99) { // When you are lucky enough....
-			Window.label.setText("You may Leave.");
-			Window.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Window
-																			// will
-																			// no
-																			// longer
-																			// "reopen."
-			Window.button.setEnabled(false); // Turns off button.
-
+			Window.youCanLeave();
 		}
-
 	}
+	
 }
