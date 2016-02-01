@@ -18,6 +18,8 @@ class Listener implements ActionListener { // For when the button is pressed.
 		clickCount++; // Adds to click count.
 		oneMinusClick = 1 - click;
 		Window.closenessNumLabel.setText(" " + oneMinusClick);
+		
+		//Prints the text all the way to the right
 		if (0 < oneMinusClick && oneMinusClick < 0.1){
 			Window.closenessTextLabel.setText("SO CLOSE");
 		} else if (0.1 < oneMinusClick && oneMinusClick < 0.2){
@@ -40,6 +42,7 @@ class Listener implements ActionListener { // For when the button is pressed.
 			Window.closenessTextLabel.setText("LITERALLY THE WORST");
 		}
 			
+		//Prints the text all the way to the left
 		if (clickCount == 50) {
 			Window.label.setText("You suck."); // Easter egg.
 		} else if (clickCount == 90) {
@@ -59,6 +62,8 @@ class Listener implements ActionListener { // For when the button is pressed.
 			Window.label.setText("" + clickCount); // Displays the number of
 													// clicks (usually.)
 		}
+		
+		//wtf is this
 		if (Window.debugging)
 			System.out.println(click);
 		if (click >= 0.99) { // When you are lucky enough....

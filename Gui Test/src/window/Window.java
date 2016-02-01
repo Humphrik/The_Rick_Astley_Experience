@@ -41,12 +41,12 @@ public class Window {
 																			// errors.
 		checkParameters(args);
 
-		hauntedURL = new URL("https://media.giphy.com/media/1dPTVv6FaQmZ2/giphy.gif"); // ???
+		hauntedURL = new URL("https://media.giphy.com/media/1dPTVv6FaQmZ2/giphy.gif"); // ??? (spooky gif)
 		url = new URL(
 				"http://2.bp.blogspot.com/-baqmxAt8YHg/UMRuNx6uNdI/AAAAAAAAD1s/TzmvfnYyP8E/s1600/rick-astely.gif"); // Ricky
 		icon = new ImageIcon(url);
 		label2 = new JLabel(icon);
-		// Image created.
+		// Image created. ^^
 		play("src/audio/Ricky.wav"); // Creates and plays main music.
 		playOther("src/audio/xfiles.wav"); // ???
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); // Makes sure the
@@ -57,13 +57,13 @@ public class Window {
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		button.addActionListener(new Listener()); // Adds function to button.
-		panel.add(label);
-		panel.add(button);
-		panel.add(label2);
+		panel.add(label); //main label
+		panel.add(button);//main button
+		panel.add(label2);//spooky image applied to this label
 		panel.add(closenessLabel);
-		panel.add(closenessNumLabel);
-		panel.add(closenessTextLabel);
-		closenessTextLabel.setBounds(30, 10, 18, 23);
+		panel.add(closenessNumLabel);//the long decimal on the window
+		panel.add(closenessTextLabel);//the text next to it
+		closenessTextLabel.setBounds(30, 10, 18, 23);//positions
 		closenessLabel.setBounds(25, 5, 18, 23);
 		closenessNumLabel.setBounds(25,  10, 18, 23);
 		frame.add(panel); // Everything put together.
@@ -78,6 +78,8 @@ public class Window {
 			}
 		});
 		frame.setVisible(true); // Displays window.
+		
+		//When its playing keep playing, but when it's closed, call reopen(time);
 		while (spooky) { // While running functionally.
 			System.out.print("");
 			if (reopen) {
@@ -129,12 +131,12 @@ public class Window {
 
 	public static void reopen(int time) { // "Reopens" after a delay.
 		try {
-			Thread.sleep(time);
+			Thread.sleep(time); //how long it stays closed (milliseconds)
 			clip.start();
 			// clip2.stop();
 			frame.setVisible(true);
 			frame.setState(JFrame.NORMAL);
-			System.out.println("Nope");
+			System.out.println("Nope"); // lol
 		} catch (Exception exc) {
 		}
 	}
@@ -142,7 +144,7 @@ public class Window {
 	public static void playOther(String filename) { // Creates music for clip 2.
 		try {
 			clip2 = AudioSystem.getClip();
-			clip2.open(AudioSystem.getAudioInputStream(new File(filename)));
+			clip2.open(AudioSystem.getAudioInputStream(new File(filename))); //opens audio file
 			clip2.start();
 			clip2.stop();
 		} catch (Exception exc) {
@@ -156,7 +158,7 @@ public class Window {
 		try {
 			clip.stop();
 			clip2.start();
-			Thread.sleep(1000);
+			Thread.sleep(1000); //stops method for 1000 milliseconds
 		} catch (InterruptedException ex) {
 		}
 		frame.setVisible(false);
