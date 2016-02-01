@@ -118,6 +118,18 @@ public class Window {
 		}
 	}
 
+	public static void reopen(int time) { // "Reopens" after a delay.
+		try {
+			Thread.sleep(time);
+			clip.start();
+			// clip2.stop();
+			frame.setVisible(true);
+			frame.setState(JFrame.NORMAL);
+			System.out.println("Nope");
+		} catch (Exception exc) {
+		}
+	}
+
 	public static void playOther(String filename) { // Creates music for clip 2.
 		try {
 			clip2 = AudioSystem.getClip();
@@ -146,17 +158,5 @@ public class Window {
 		frame.dispose();
 	}
 
-	public static void reopen(int time) { // "Reopens" after a delay.
-		try {
-			Thread.sleep(time);
-			clip.start();
-			// clip2.stop();
-			frame.setVisible(true);
-			frame.setState(JFrame.NORMAL);
-			System.out.println("Nope");
-		} catch (Exception exc) {
-
-		}
-	}
 }
 
