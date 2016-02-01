@@ -65,7 +65,7 @@ public class Window {
 		panel.add(closenessLabel);
 		panel.add(closenessNumLabel);//the long decimal on the window
 		panel.add(closenessTextLabel);//the text next to it
-		closenessTextLabel.setBounds(30, 10, 18, 23);//positions
+		closenessTextLabel.setBounds(30, 300, 18, 23);//positions
 		closenessLabel.setBounds(25, 5, 18, 23);
 		closenessNumLabel.setBounds(25, 10, 18, 23);
 		panel.setFocusable(true);
@@ -114,15 +114,11 @@ public class Window {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
-				
-				
 			}
 
 			@Override
 			public void keyTyped(KeyEvent e) {
 				// TODO Auto-generated method stub
-
 			}
 			
 		});

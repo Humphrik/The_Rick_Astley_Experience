@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 
 class Listener implements ActionListener { // For when the button is pressed.
 	private double click;
@@ -66,9 +65,11 @@ class Listener implements ActionListener { // For when the button is pressed.
 		//wtf is this
 		if (Window.debugging)
 			System.out.println(click);
-		if (click >= 0.99) { // When you are lucky enough....
+		
+		if (click >= 0.99)  // When you are lucky enough....
 			Window.youCanLeave();
-		}
+		
+		Window.panel.requestFocusInWindow();
 	}
 	
 }
