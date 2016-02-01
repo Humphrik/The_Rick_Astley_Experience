@@ -20,7 +20,7 @@ class Listener implements ActionListener { // For when the button is pressed.
 		
 		//Prints the text all the way to the right
 		if (0 < oneMinusClick && oneMinusClick < 0.1){
-			Window.closenessTextLabel.setText("SO CLOSE");
+			Window.closenessTextLabel.setText("YOU DID IT");
 		} else if (0.1 < oneMinusClick && oneMinusClick < 0.2){
 			Window.closenessTextLabel.setText("VERY CLOSE");
 		} else if (0.2 < oneMinusClick && oneMinusClick < 0.3){

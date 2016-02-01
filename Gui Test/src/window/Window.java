@@ -49,11 +49,11 @@ public class Window {
 		df.setRoundingMode(RoundingMode.DOWN);
 		hauntedURL = new URL("https://media.giphy.com/media/1dPTVv6FaQmZ2/giphy.gif"); // ??? (spooky gif)
 		url = new URL(
-				"http://2.bp.blogspot.com/-baqmxAt8YHg/UMRuNx6uNdI/AAAAAAAAD1s/TzmvfnYyP8E/s1600/rick-astely.gif"); // Ricky
+				"http://media.giphy.com/media/3o7Zer8JRm8R3T4AKs/giphy.gif"); // Ricky
 		icon = new ImageIcon(url);
 		label2 = new JLabel(icon);
 		// Image created. ^^
-		play("src/audio/Ricky.wav"); // Creates and plays main music.
+		
 		playOther("src/audio/xfiles.wav"); // ???
 		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); // Makes sure the
 																// window does
@@ -127,6 +127,7 @@ public class Window {
 			
 		});
 		frame.add(panel); // Everything put together.
+
 		frame.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent evt) { // Upon attempting to
 															// close early.
@@ -138,7 +139,13 @@ public class Window {
 			}
 		});
 		frame.setVisible(true); // Displays window.
-
+		try {
+			Thread.sleep(300);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		play("src/audio/Ricky.wav"); // Creates and plays main music.
 		
 		//When its playing keep playing, but when it's closed, call reopen(time);
 		while (spooky) { // While running functionally.
