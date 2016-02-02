@@ -19,8 +19,10 @@ class Listener implements ActionListener { // For when the button is pressed.
 		Window.closenessNumLabel.setText(" " + Window.df.format(oneMinusClick));
 		
 		//Prints the text all the way to the right
-		if (0 < oneMinusClick && oneMinusClick < 0.1){
+		if (0 < oneMinusClick && oneMinusClick < 0.01){
 			Window.closenessTextLabel.setText("YOU DID IT");
+		} else if (0.01 < oneMinusClick && oneMinusClick < 0.1){
+			Window.closenessTextLabel.setText("SO CLOSE");
 		} else if (0.1 < oneMinusClick && oneMinusClick < 0.2){
 			Window.closenessTextLabel.setText("VERY CLOSE");
 		} else if (0.2 < oneMinusClick && oneMinusClick < 0.3){
@@ -58,8 +60,7 @@ class Listener implements ActionListener { // For when the button is pressed.
 			Window.label2.setIcon(hauntedIcon);
 			Window.spooky = false;
 		} else {
-			Window.label.setText("" + clickCount); // Displays the number of
-													// clicks (usually.)
+			Window.label.setText("" + clickCount); // Displays the number of clicks (usually.)
 		}
 		
 		//wtf is this

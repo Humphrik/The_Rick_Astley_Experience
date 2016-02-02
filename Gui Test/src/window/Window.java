@@ -41,9 +41,7 @@ public class Window {
 	// static WindowListener exitListener;
 	// static MalformedURLException error = new MalformedURLException("");
 
-	public static void main(String[] args) throws MalformedURLException { // Accommodates
-																			// URL
-																			// errors.
+	public static void main(String[] args) throws MalformedURLException { // Accommodates URL errors.
 		checkParameters(args);
 
 		df.setRoundingMode(RoundingMode.DOWN);
@@ -55,25 +53,35 @@ public class Window {
 		// Image created. ^^
 		
 		playOther("src/audio/xfiles.wav"); // ???
-		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); // Makes sure the
-																// window does
-																// not terminate
-																// early.
-		frame.setSize(1280, 800); 
+		frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); // Makes sure the window does not terminate early.
+		frame.setSize(750, 750); 
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 		button.addActionListener(new Listener()); // Adds function to button.
+		panel.setSize(1280, 800);
 		panel.add(label); //main label
 		panel.add(button);//main button
-		panel.add(label2);//spooky image applied to this label
+		panel.add(label2);//ricky applied to this label
 		panel.add(closenessLabel);
 		panel.add(closenessNumLabel);//the long decimal on the window
 		panel.add(closenessTextLabel);//the text next to it
-		closenessTextLabel.setBounds(30, 300, 18, 23);//positions
-		closenessLabel.setBounds(25, 5, 18, 23);
-		closenessNumLabel.setBounds(25, 10, 18, 23);
+		
+		button.setSize(600, 50);
+		button.setLocation(0, 650);
+		closenessTextLabel.setSize(300, 50);
+		closenessTextLabel.setLocation(200, 525);
+		closenessLabel.setSize(500, 25);
+		closenessLabel.setLocation(0, 500);
+		closenessNumLabel.setSize(150, 50);
+		closenessNumLabel.setLocation(0, 525);
+		label2.setSize(500, 400);
+		label2.setLocation(0, 0);
+		label.setLocation(0, 600);
+		label.setSize(300, 25);
+		
 		panel.setFocusable(true);
 		panel.requestFocusInWindow();
+		panel.setLayout(null);
 		panel.addKeyListener(new KeyListener(){
 			
 			//Konami code exit
@@ -224,6 +232,7 @@ public class Window {
 	// }
 	public static void spooked() { // For the unlucky.
 		try {
+			
 			clip.stop();
 			clip2.start();
 			Thread.sleep(1000); //stops method for 1000 milliseconds
